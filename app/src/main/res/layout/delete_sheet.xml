@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:id="@+id/delete_shhet"
+    android:layout_height="wrap_content">
+
+    <View
+        android:layout_width="100dp"
+        android:layout_height="7dp"
+        android:background="@drawable/delete_indicator"
+        android:layout_margin="10dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Are you sure want to delete\n
+this Note?"
+        android:fontFamily="@font/product_sans_regular"
+        android:textSize="19sp"
+        android:textColor="@color/black"
+        android:layout_margin="10dp"
+        />
+
+    <TextView
+        android:id="@+id/no"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:text="No"
+        android:padding="7dp"
+       android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:textSize="18sp"
+        android:fontFamily="@font/product_sans_regular"
+        android:background="@drawable/no_delete"/>
+
+    <TextView
+        android:id="@+id/yes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:text="Yes"
+        android:padding="7dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:textSize="18sp"
+        android:fontFamily="@font/product_sans_regular"
+        android:background="@drawable/yes_delete"/>
+
+
+
+</LinearLayout>

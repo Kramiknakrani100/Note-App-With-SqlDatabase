@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Notes</string>
+    <string name="note_app">Note App</string>
+    <string name="todo">TODO</string>
+    <string name="title">Title...</string>
+    <string name="notes">Notes...</string>
+    <string name="subtitle">Subtitle...</string>
+    <string name="priority">Priority</string>
+    <string name="share">Share</string>
+</resources>

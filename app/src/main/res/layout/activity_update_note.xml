@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E8E8E8"
+    android:orientation="vertical"
+    tools:context=".Activity.InsertNoteActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/updateTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:textSize="30sp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/edittextbg"
+                android:fontFamily="@font/product_sans_regular"
+                android:hint="@string/title"
+                android:padding="15dp" />
+
+
+            <EditText
+                android:id="@+id/updatesunTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:textSize="23sp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/edittextbg"
+                android:fontFamily="@font/product_sans_regular"
+                android:hint="@string/subtitle"
+                android:padding="15dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="16dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="@font/product_sans_regular"
+                    android:text="@string/priority"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:id="@+id/greenpriority"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/green_shape"/>
+
+                <ImageView
+                    android:id="@+id/yellowpriority"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/yellow_shape"/>
+
+                <ImageView
+                    android:id="@+id/redpriority"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/red_shape"/>
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/updateNotes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="225dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/edittextbg"
+                android:fontFamily="@font/product_sans_regular"
+                android:gravity="start"
+                android:hint="@string/notes"
+                android:padding="15dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/updateNotesbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="26dp"
+        android:layout_marginRight="26dp"
+        android:layout_marginBottom="26dp"
+        android:clickable="true"
+        android:contentDescription="@string/todo"
+        android:focusable="true"
+        android:src="@drawable/ic_done"
+        app:backgroundTint="@color/red"
+        tools:ignore="VectorDrawableCompat" />
+
+</RelativeLayout>
