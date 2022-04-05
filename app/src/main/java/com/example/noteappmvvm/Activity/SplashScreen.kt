@@ -1,31 +1,24 @@
-package com.example.noteappmvvm.Activity;
+package com.example.noteappmvvm.Activity
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.Handler;
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import com.example.noteappmvvm.R
+import android.content.Intent
+import android.os.Handler
+import com.example.noteappmvvm.MainActivity
+import java.util.*
 
-import androidx.appcompat.app.AppCompatActivity;
+class SplashScreen : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_splash_screen)
+        Objects.requireNonNull(supportActionBar)?.hide()
+        Handler().postDelayed({
 
-import com.example.noteappmvvm.MainActivity;
-import com.example.noteappmvvm.R;
-
-import java.util.Objects;
-
-
-public class SplashScreen extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash_screen);
-
-        Objects.requireNonNull(getSupportActionBar()).hide();
-
-        new Handler().postDelayed(() -> {
             // This method will be executed once the timer is over
-            Intent i = new Intent(SplashScreen.this, MainActivity.class);
-            startActivity(i);
-            finish();
-        }, 1000);
+            val i = Intent(this@SplashScreen, MainActivity::class.java)
+            startActivity(i)
+            finish()
+        }, 1000)
     }
 }

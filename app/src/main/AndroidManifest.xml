@@ -9,9 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NoteAppMVVM">
-        <activity android:name=".Activity.UpdateNoteActivity"></activity>
+        <activity android:name=".Activity.UpdateNoteActivity" />
         <activity android:name=".Activity.InsertNoteActivity" />
-        <activity android:name=".Activity.SplashScreen">
+        <activity android:name=".Activity.SplashScreen"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

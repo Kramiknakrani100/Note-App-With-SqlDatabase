@@ -1,31 +1,32 @@
-package com.example.noteappmvvm.Model;
+package com.example.noteappmvvm.Model
 
-import androidx.room.ColumnInfo;
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
+import androidx.room.PrimaryKey
+import androidx.room.ColumnInfo
+import androidx.room.Entity
 
 @Entity(tableName = "Notes_Database")
-public class Notes {
-
+class Notes {
+    @JvmField
     @PrimaryKey(autoGenerate = true)
-    public int id;
+    var id = 0
 
+    @JvmField
     @ColumnInfo(name = "notes_title")
-    public String notesTitle;
+    var notesTitle: String? = null
 
+    @JvmField
     @ColumnInfo(name = "notes_subtitle")
-    public String notesSubtitle;
+    var notesSubtitle: String? = null
 
+    @JvmField
     @ColumnInfo(name = "notes_date")
-    public String notesDate;
+    var notesDate: String? = null
 
+    @JvmField
     @ColumnInfo(name = "notes")
-    public String notes;
+    var notes: String? = null
 
+    @JvmField
     @ColumnInfo(name = "notes_priority")
-    public String notesPriority;
-
-    public int getId() {
-        return id;
-    }
+    var notesPriority: String? = null
 }

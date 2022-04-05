@@ -1,33 +1,29 @@
-package com.example.noteappmvvm.Dao;
+package com.example.noteappmvvm.Dao
 
-import androidx.lifecycle.LiveData;
-import androidx.room.Insert;
-import androidx.room.Query;
-import androidx.room.Update;
+import androidx.room.Dao
+import androidx.lifecycle.LiveData
+import androidx.room.Insert
+import androidx.room.Query
+import com.example.noteappmvvm.Model.Notes
+import androidx.room.Update
 
-import com.example.noteappmvvm.Model.Notes;
-
-import java.util.List;
-
-@androidx.room.Dao
-public interface NotesDao {
-
+@Dao
+interface NotesDao {
     @Query("SELECT * FROM Notes_Database")
-    LiveData<List<Notes>> getallNotes();
+    fun getallNotes(): LiveData<List<Notes?>?>?
 
     @Query("SELECT * FROM Notes_Database ORDER BY notes_priority DESC")
-    LiveData<List<Notes>> hightoLow();
+    fun hightoLow(): LiveData<List<Notes?>?>?
 
     @Query("SELECT * FROM Notes_Database ORDER BY notes_priority ASC")
-    LiveData<List<Notes>> lowtoHigh();
+    fun lowtoHigh(): LiveData<List<Notes?>?>?
 
-    @Insert()
-    void insertNotes(Notes... notes);
+    @Insert
+    fun insertNotes(vararg notes: Notes?)
 
     @Query("DELETE FROM Notes_Database WHERE id=:id")
-    void deleteNotes(int id);
+    fun deleteNotes(id: Int)
 
     @Update
-    void updateNotes(Notes notes);
-
+    fun updateNotes(notes: Notes?)
 }

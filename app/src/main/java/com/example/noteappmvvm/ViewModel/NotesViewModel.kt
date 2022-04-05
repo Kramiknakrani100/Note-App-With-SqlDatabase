@@ -1,40 +1,28 @@
-package com.example.noteappmvvm.ViewModel;
+package com.example.noteappmvvm.ViewModel
 
-import android.app.Application;
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
+import com.example.noteappmvvm.Model.Notes
+import com.example.noteappmvvm.Repository.NoteRepository
 
-import androidx.lifecycle.AndroidViewModel;
-import androidx.lifecycle.LiveData;
-
-import com.example.noteappmvvm.Model.Notes;
-import com.example.noteappmvvm.Repository.NoteRepository;
-
-import java.util.List;
-
-public class NotesViewModel extends AndroidViewModel {
-
-    NoteRepository repository;
-    public LiveData<List<Notes>> getallNotes;
-    public LiveData<List<Notes>> hightoLow;
-    public LiveData<List<Notes>> lowtoHigh;
-
-    public NotesViewModel(Application application) {
-        super(application);
-
-        repository = new NoteRepository(application);
-        getallNotes = repository.getallNotes;
-        hightoLow = repository.hightoLow;
-        lowtoHigh = repository.lowtoHigh;
+class NotesViewModel(application: Application?) : AndroidViewModel(
+    application!!
+) {
+    private var repository: NoteRepository = NoteRepository(application)
+    var getallNotes: LiveData<List<Notes?>?>? = repository.getallNotes
+    var hightoLow: LiveData<List<Notes?>?>? = repository.hightoLow
+    var lowtoHigh: LiveData<List<Notes?>?>? = repository.lowtoHigh
+    fun insertNote(notes: Notes?) {
+        repository.insertNotes(notes)
     }
 
-    public void insertNote(Notes notes){
-        repository.insertNotes(notes);
+    fun deleteNote(id: Int) {
+        repository.deleteNotes(id)
     }
 
-    public void deleteNote(int id){
-        repository.deleteNotes(id);
+    fun updateNote(notes: Notes?) {
+        repository.updateNotes(notes)
     }
 
-    public void updateNote(Notes notes){
-        repository.updateNotes(notes);
-    }
 }
